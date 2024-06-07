@@ -1,0 +1,288 @@
+{
+    "delivery-address": {
+        "title": "Lieferadresse",
+        "acfe_form_name": "delivery-address",
+        "acfe_form_field_groups": [
+            "group_6180efc32f629"
+        ],
+        "acfe_form_actions": [
+            {
+                "acf_fc_layout": "user",
+                "field_acfe_form_user_action_docs": null,
+                "field_acfe_form_user_action": "update_user",
+                "field_acfe_form_user_custom_alias": "",
+                "field_acfe_form_user_log_type": "email",
+                "field_acfe_form_user_save_login_user": "",
+                "field_acfe_form_user_save_login_pass": "",
+                "field_acfe_form_user_save_login_remember": "",
+                "field_acfe_form_user_save_target": "current_user",
+                "field_acfe_form_user_save_email": "",
+                "field_acfe_form_user_map_email_message": null,
+                "field_acfe_form_user_save_username": "",
+                "field_acfe_form_user_map_username_message": null,
+                "field_acfe_form_user_save_password": "",
+                "field_acfe_form_user_map_password_message": null,
+                "field_acfe_form_user_save_first_name": "",
+                "field_acfe_form_user_map_first_name_message": null,
+                "field_acfe_form_user_save_last_name": "",
+                "field_acfe_form_user_map_last_name_message": null,
+                "field_acfe_form_user_save_nickname": "",
+                "field_acfe_form_user_map_nickname_message": null,
+                "field_acfe_form_user_save_display_name": "",
+                "field_acfe_form_user_map_display_name_message": null,
+                "field_acfe_form_user_save_website": "",
+                "field_acfe_form_user_map_website_message": null,
+                "field_acfe_form_user_save_description_group": {
+                    "field_acfe_form_user_save_description": "",
+                    "field_acfe_form_user_save_description_custom": ""
+                },
+                "field_acfe_form_user_map_description_message": null,
+                "field_acfe_form_user_save_role": "",
+                "field_acfe_form_user_map_role_message": null,
+                "field_acfe_form_user_save_meta": [
+                    "field_6180efcd0fbac",
+                    "field_6180f4030fbad",
+                    "field_6180f5c90fbae"
+                ],
+                "field_acfe_form_user_load_values": "1",
+                "field_acfe_form_user_load_source": "current_user",
+                "field_acfe_form_user_map_email": "",
+                "field_acfe_form_user_map_username": "",
+                "field_acfe_form_user_map_password": "",
+                "field_acfe_form_user_map_first_name": "",
+                "field_acfe_form_user_map_last_name": "",
+                "field_acfe_form_user_map_nickname": "",
+                "field_acfe_form_user_map_display_name": "",
+                "field_acfe_form_user_map_website": "",
+                "field_acfe_form_user_map_description": "",
+                "field_acfe_form_user_map_role": "",
+                "field_acfe_form_user_load_meta": [
+                    "field_6180efcd0fbac",
+                    "field_6180f4030fbad",
+                    "field_6180f5c90fbae"
+                ]
+            }
+        ],
+        "acfe_form_field_groups_rules": "0",
+        "acfe_form_form_element": "1",
+        "acfe_form_attributes": {
+            "field_acfe_form_attributes_class": "acf-form",
+            "field_acfe_form_attributes_id": ""
+        },
+        "acfe_form_fields_attributes": {
+            "field_acfe_form_fields_wrapper_class": "",
+            "field_acfe_form_fields_class": ""
+        },
+        "acfe_form_form_submit": "1",
+        "acfe_form_submit_value": "Adresse aktualisieren",
+        "acfe_form_html_submit_button": "<input type=\"submit\" class=\"btn btn-standard\" value=\"%s\" \/>",
+        "acfe_form_html_submit_spinner": "<span class=\"acf-spinner\"><\/span>",
+        "acfe_form_honeypot": "1",
+        "acfe_form_kses": "1",
+        "acfe_form_uploader": "default",
+        "acfe_form_form_field_el": "div",
+        "acfe_form_label_placement": "top",
+        "acfe_form_instruction_placement": "label",
+        "acfe_form_custom_html_enable": "0",
+        "acfe_form_html_before_fields": "",
+        "acfe_form_html_after_fields": "",
+        "acfe_form_hide_error": "0",
+        "acfe_form_hide_revalidation": "0",
+        "acfe_form_hide_unload": "0",
+        "acfe_form_errors_position": "above",
+        "acfe_form_errors_class": "",
+        "acfe_form_updated_hide_form": "0",
+        "acfe_form_updated_message": "Beitrag aktualisiert",
+        "acfe_form_html_updated_message": "<div id=\"message\" class=\"updated\">%s<\/div>"
+    },
+    "cart-checkout": {
+        "title": "Checkout",
+        "acfe_form_name": "cart-checkout",
+        "acfe_form_field_groups": [
+            "group_6165527d3e627"
+        ],
+        "acfe_form_actions": [
+            {
+                "acf_fc_layout": "post",
+                "field_acfe_form_post_action_docs": null,
+                "field_acfe_form_post_action": "update_post",
+                "field_acfe_form_post_custom_alias": "",
+                "field_acfe_form_post_save_target": "current_post",
+                "field_acfe_form_post_save_post_type": "",
+                "field_acfe_form_post_map_post_type_message": null,
+                "field_acfe_form_post_save_post_status": "",
+                "field_acfe_form_post_map_post_status_message": null,
+                "field_acfe_form_post_save_post_title": "",
+                "field_acfe_form_post_map_post_title_message": null,
+                "field_acfe_form_post_save_post_name": "",
+                "field_acfe_form_post_map_post_name_message": null,
+                "field_acfe_form_post_save_post_content_group": {
+                    "field_acfe_form_post_save_post_content": "",
+                    "field_acfe_form_post_save_post_content_custom": ""
+                },
+                "field_acfe_form_post_map_post_content_message": null,
+                "field_acfe_form_post_save_post_excerpt_group": {
+                    "field_acfe_form_post_save_post_excerpt": "",
+                    "field_acfe_form_post_save_post_excerpt_custom": ""
+                },
+                "field_acfe_form_post_map_post_excerpt_message": null,
+                "field_acfe_form_post_save_post_author": "",
+                "field_acfe_form_post_map_post_author_message": null,
+                "field_acfe_form_post_save_post_parent": "",
+                "field_acfe_form_post_map_post_parent_message": null,
+                "field_acfe_form_post_save_post_terms": "",
+                "field_acfe_form_post_map_post_terms_message": null,
+                "field_acfe_form_post_save_meta": "",
+                "field_acfe_form_post_load_values": "1",
+                "field_acfe_form_post_load_source": "current_post",
+                "field_acfe_form_post_map_post_type": "",
+                "field_acfe_form_post_map_post_status": "",
+                "field_acfe_form_post_map_post_title": "",
+                "field_acfe_form_post_map_post_name": "",
+                "field_acfe_form_post_map_post_content": "",
+                "field_acfe_form_post_map_post_excerpt": "",
+                "field_acfe_form_post_map_post_author": "",
+                "field_acfe_form_post_map_post_parent": "",
+                "field_acfe_form_post_map_post_terms": "",
+                "field_acfe_form_post_load_meta": [
+                    "field_616558167898c",
+                    "field_617bb334332ea"
+                ]
+            },
+            {
+                "acf_fc_layout": "email",
+                "field_acfe_form_email_action_docs": null,
+                "field_acfe_form_email_custom_alias": "submit-order",
+                "field_acfe_form_email_from": "noreply@wkm-online.de",
+                "field_acfe_form_email_to": "{user:user_email}",
+                "field_acfe_form_email_reply_to": "webwerk@pfennigparade.de",
+                "field_acfe_form_email_cc": "alois.wieshuber@pfennigparade.de",
+                "field_acfe_form_email_bcc": "",
+                "field_acfe_form_email_subject": "Ihre Bestellung im Bit-Shop",
+                "field_acfe_form_email_content": "Hallo {user:display_name},\r\n\r\nVielen Dank für Ihre Bestellung.\r\n\r\nSie haben bestellt:\r\n\r\n{fields}\r\n\r\n&nbsp;\r\n\r\nBitte bezahlen Sie {field:field_617bb334332ea} € an:\r\n\r\n---------- Kontoinformationen des BIT-Zentrum ----------\r\n\r\n&nbsp;\r\n\r\nIhre Lieferadresse:\r\n\r\n{user:display_name}\r\n\r\nStraße: {user:customer-address}\r\n\r\nPLZ:  {user:postcode}\r\n\r\nOrt: {user:place}",
+                "field_acfe_form_email_files": false,
+                "field_acfe_form_email_files_static": false
+            }
+        ],
+        "acfe_form_field_groups_rules": "1",
+        "acfe_form_form_element": "1",
+        "acfe_form_attributes": {
+            "field_acfe_form_attributes_class": "acf-form",
+            "field_acfe_form_attributes_id": ""
+        },
+        "acfe_form_fields_attributes": {
+            "field_acfe_form_fields_wrapper_class": "",
+            "field_acfe_form_fields_class": ""
+        },
+        "acfe_form_form_submit": "1",
+        "acfe_form_submit_value": "Kostenpflichtig bestellen",
+        "acfe_form_html_submit_button": "<div class=\"btns\"><input type=\"submit\" class=\"btn btn-standard\" value=\"%s\" \/>",
+        "acfe_form_html_submit_spinner": "<span class=\"acf-spinner\"><\/span>",
+        "acfe_form_honeypot": "1",
+        "acfe_form_kses": "1",
+        "acfe_form_uploader": "default",
+        "acfe_form_form_field_el": "div",
+        "acfe_form_label_placement": "top",
+        "acfe_form_instruction_placement": "label",
+        "acfe_form_custom_html_enable": "0",
+        "acfe_form_html_before_fields": "",
+        "acfe_form_html_after_fields": "",
+        "acfe_form_hide_error": "0",
+        "acfe_form_hide_revalidation": "0",
+        "acfe_form_hide_unload": "0",
+        "acfe_form_errors_position": "above",
+        "acfe_form_errors_class": "",
+        "acfe_form_updated_hide_form": "0",
+        "acfe_form_updated_message": "Die Bestellung wurde erfolgreich abgeschickt.\r\nWenn Sie digitale Produkte bestellt haben können Sie diese gleich herunterladen.",
+        "acfe_form_html_updated_message": "<div id=\"message\" class=\"updated\">%s<\/div>"
+    },
+    "cart-form": {
+        "title": "Warenkorb",
+        "acfe_form_name": "cart-form",
+        "acfe_form_field_groups": [
+            "group_6165527d3e627"
+        ],
+        "acfe_form_actions": [
+            {
+                "acf_fc_layout": "post",
+                "field_acfe_form_post_action_docs": null,
+                "field_acfe_form_post_action": "update_post",
+                "field_acfe_form_post_custom_alias": "update-cart",
+                "field_acfe_form_post_save_target": "current_post",
+                "field_acfe_form_post_save_post_type": "",
+                "field_acfe_form_post_map_post_type_message": null,
+                "field_acfe_form_post_save_post_status": "",
+                "field_acfe_form_post_map_post_status_message": null,
+                "field_acfe_form_post_save_post_title": "{user:display_name}",
+                "field_acfe_form_post_map_post_title_message": null,
+                "field_acfe_form_post_save_post_name": "{user:user_nicename}",
+                "field_acfe_form_post_map_post_name_message": null,
+                "field_acfe_form_post_save_post_content_group": {
+                    "field_acfe_form_post_save_post_content": "field_617bb334332ea",
+                    "field_acfe_form_post_save_post_content_custom": ""
+                },
+                "field_acfe_form_post_map_post_content_message": null,
+                "field_acfe_form_post_save_post_excerpt_group": {
+                    "field_acfe_form_post_save_post_excerpt": "",
+                    "field_acfe_form_post_save_post_excerpt_custom": ""
+                },
+                "field_acfe_form_post_map_post_excerpt_message": null,
+                "field_acfe_form_post_save_post_author": "current_post_author",
+                "field_acfe_form_post_map_post_author_message": null,
+                "field_acfe_form_post_save_post_parent": "",
+                "field_acfe_form_post_map_post_parent_message": null,
+                "field_acfe_form_post_save_post_terms": "",
+                "field_acfe_form_post_map_post_terms_message": null,
+                "field_acfe_form_post_save_meta": [
+                    "field_616558167898c",
+                    "field_617bb334332ea"
+                ],
+                "field_acfe_form_post_load_values": "1",
+                "field_acfe_form_post_load_source": "current_post",
+                "field_acfe_form_post_map_post_type": "",
+                "field_acfe_form_post_map_post_status": "",
+                "field_acfe_form_post_map_post_title": "",
+                "field_acfe_form_post_map_post_name": "",
+                "field_acfe_form_post_map_post_content": "",
+                "field_acfe_form_post_map_post_excerpt": "",
+                "field_acfe_form_post_map_post_author": "",
+                "field_acfe_form_post_map_post_parent": "",
+                "field_acfe_form_post_map_post_terms": "",
+                "field_acfe_form_post_load_meta": [
+                    "field_616558167898c"
+                ]
+            }
+        ],
+        "acfe_form_field_groups_rules": "0",
+        "acfe_form_form_element": "1",
+        "acfe_form_attributes": {
+            "field_acfe_form_attributes_class": "acf-form",
+            "field_acfe_form_attributes_id": ""
+        },
+        "acfe_form_fields_attributes": {
+            "field_acfe_form_fields_wrapper_class": "",
+            "field_acfe_form_fields_class": ""
+        },
+        "acfe_form_form_submit": "1",
+        "acfe_form_submit_value": "Warenkorb aktualisieren",
+        "acfe_form_html_submit_button": "<div class=\"btns\"><input type=\"submit\" class=\"btn btn-standard\" value=\"%s\" \/>",
+        "acfe_form_html_submit_spinner": "<span class=\"acf-spinner\"><\/span>",
+        "acfe_form_honeypot": "1",
+        "acfe_form_kses": "1",
+        "acfe_form_uploader": "default",
+        "acfe_form_form_field_el": "div",
+        "acfe_form_label_placement": "top",
+        "acfe_form_instruction_placement": "label",
+        "acfe_form_custom_html_enable": "0",
+        "acfe_form_html_before_fields": "",
+        "acfe_form_html_after_fields": "",
+        "acfe_form_hide_error": "0",
+        "acfe_form_hide_revalidation": "0",
+        "acfe_form_hide_unload": "0",
+        "acfe_form_errors_position": "above",
+        "acfe_form_errors_class": "",
+        "acfe_form_updated_hide_form": "0",
+        "acfe_form_updated_message": "Warenkorb aktualisiert",
+        "acfe_form_html_updated_message": "<div id=\"message\" class=\"cart-updated\">%s<\/div>"
+    }
+}

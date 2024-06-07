@@ -1,0 +1,42 @@
+/*---------------------------------------------------
+# Custom Blocks
+-----------------------------------------------------*/
+@charset 'utf-8';
+@import "../../../themes/webwerk/scss/settings";
+@import "../../../themes/webwerk/scss/mixins";
+@import "youtube.scss";
+@import "timeline.scss";
+@import "slider.scss";
+@import "slick-lightbox.sass";
+
+// .box {
+//   margin-bottom: $grid-column-gutter / 2;
+//   padding: $grid-column-gutter / 2;
+// }
+//
+// .box-hero-logo {
+//   display: none;
+// }
+// @include breakpoint(xxlarge) {
+//   .box-hero-logo {
+//     display: block;
+//     padding: $grid-column-gutter 0;
+//   }
+// }
+// .box-tiles {
+//   background: $secondary-color;
+//   height: 100%;
+//
+//   a {
+//     text-decoration: none;
+//     display: block;
+//   }
+//
+//   .wp-block-image {
+//     overflow: hidden;
+//     max-width: auto;
+//     margin-top: -$grid-column-gutter/2;
+//     margin-left: -$grid-column-gutter/2;
+//     margin-right: -$grid-column-gutter/2;
+//   }
+// }
