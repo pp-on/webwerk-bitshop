@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Webwerk Shop.
- * Description: Webwerk Shop.
+ * Plugin Name: Webwerk Bitshop
+ * Description: Ein Plugin zum Verwalten von Produkten, Bestellungen und Warenkörben.
+ * Version: 1.0
  * Author: Webwerk
  * Author URI: https://webwerk-pfennigparade.de/
  *
  * @version WEBWERK_SHOP_VERSION
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: webwerk-shop
  * Domain Path: /
  *
  * @package Webwerk ACF Forms
