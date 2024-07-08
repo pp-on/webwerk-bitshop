@@ -326,19 +326,19 @@ function ww_shop_templates( $template ) {
 		// include $template;
 	// }.
 
-	if ( is_page( 'Warenkorb/Checkout' ) && file_exists( plugin_dir_path( __FILE__ ) . 'cart-checkout-page.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'cart-checkout-page.php';
+	if ( is_page( 'Warenkorb/Checkout' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/cart-checkout-page.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) .  'templates/cart-checkout-page.php';
 			// include $template;.
 	}
-	if ( is_page( 'Meine Bestellungen' ) && file_exists( plugin_dir_path( __FILE__ ) . 'orders-page.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'orders-page.php';
+	if ( is_page( 'Meine Bestellungen' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/orders-page.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) .  'templates/orders-page.php';
 			// include $template;.
 	}
-	if ( is_singular( 'customer_cart' ) && file_exists( plugin_dir_path( __FILE__ ) . 'single-warenkorb.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'single-warenkorb.php';
+	if ( is_singular( 'customer_cart' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/single-warenkorb.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) .  'templates/single-warenkorb.php';
 	}
-	if ( is_singular( 'customer_order' ) && file_exists( plugin_dir_path( __FILE__ ) . 'single-bestellung.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'single-bestellung.php';
+	if ( is_singular( 'customer_order' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/single-bestellung.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) .  'templates/single-bestellung.php';
 	}
 
 	return $template;
