@@ -1,0 +1,6 @@
+4 CPTs: 
+    customer_order -> order_post_type()
+    product -> product_cpt()
+1 taxonomy: product, magazin_cpt -> publication_form()
+2 single templates: single-{product, magazin_cpt}.php -> ww_shop_single_template
+1 archive template cpt: archive-product.php -> get_custom_post_typetemplate()_
