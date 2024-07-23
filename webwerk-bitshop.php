@@ -6,7 +6,7 @@
  * Author: Webwerk
  * Author URI: https://webwerk-pfennigparade.de/
  *
- * @version WEBWERK_SHOP_VERSION
+ * @version WEBWERK_BITSHOP_VERSION
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WEBWERK_SHOP_VERSION', '1.0' );
+define( 'WEBWERK_BITSHOP_VERSION', '1.0' );
 // Hook um Admintoolbar für alle Benutzer außer Admin zu verstecken.
 add_action( 'after_setup_theme', 'remove_admin_bar' );
 /**
@@ -404,11 +404,11 @@ function shop_styles_scripts() {
 		'ww-shop',
 		plugin_dir_url( __DIR__ ) . 'webwerk-shop/css/shop.min.css',
 		'',
-		WEBWERK_SHOP_VERSION
+		WEBWERK_BITSHOP_VERSION
 	);
-	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/app.min.js', array( 'jquery' ), WEBWERK_SHOP_VERSION, true );
+	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/app.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
 	if ( basename( $template ) === 'single-warenkorb.php' || basename( $template ) === 'cart-checkout-page.php' ) {
-		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/cart.min.js', array( 'jquery' ), WEBWERK_SHOP_VERSION, true );
+		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/cart.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'shop_styles_scripts', 90 );
