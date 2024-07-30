@@ -584,6 +584,33 @@ add_action(
 	}
 );
 
+/**
+ * Rewrite-Regeln beim Aktivieren des Plugins leeren.
+ *
+ * Diese Funktion wird ausgef├╝hrt, wenn das Plugin aktiviert wird.
+ * Sie sorgt daf├╝r, dass die Rewrite-Regeln von WordPress aktualisiert werden,
+ * um die neuen benutzerdefinierten Beitragstypen und deren Rewrite-Regeln zu ber├╝cksichtigen.
+ */
+function webwerk_bitshop_flush_rewrite_rules() {
+    // Rewrite-Regeln leeren
+    flush_rewrite_rules();
+}
 
-// register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-// register_activation_hook( __FILE__, 'forms_flush_rewrites' );
+// Aktivierungshook registrieren
+register_activation_hook(__FILE__, 'webwerk_bitshop_flush_rewrite_rules');
+
+/**
+ * Rewrite-Regeln beim Deaktivieren des Plugins leeren.
+ *
+ * Diese Funktion wird ausgef├╝hrt, wenn das Plugin deaktiviert wird.
+ * Sie sorgt daf├╝r, dass die Rewrite-Regeln von WordPress aktualisiert werden,
+ * um die ├änderungen r├╝ckg├ñngig zu machen.
+ */
+function webwerk_bitshop_deactivate() {
+    // Rewrite-Regeln leeren
+    flush_rewrite_rules();
+}
+
+// Deaktivierungshook registrieren
+register_deactivation_hook(__FILE__, 'webwerk_bitshop_deactivate');
+?>
