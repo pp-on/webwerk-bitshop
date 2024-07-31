@@ -28,6 +28,3 @@ Dieses Plugin bietet einen barrierefreien Webshop für blinde und sehbehinderte 
 1. Führen Sie `npm install` aus, um die Abhängigkeiten zu installieren.
 2. Verwenden Sie `gulp`, um die SCSS-Dateien zu kompilieren und die JavaScript-Dateien zu minimieren.
 
-## Lizenz
-Dieses Plugin ist unter der MIT-Lizenz lizenziert.
-
