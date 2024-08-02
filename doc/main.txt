@@ -1,6 +1,13 @@
 4 CPTs: 
-    customer_order -> order_post_type()
-    product -> product_cpt()
-1 taxonomy: product, magazin_cpt -> publication_form()
+    Bestellungen: customer_order -> order_post_type()
+    Produkte: product -> product_cpt()
+    Warenkorb: cart -> cart_post_type()
+    Zeitschriften: magazin_cpt -> magazin_cpt() 
+1 taxonomy: 
+    publicationform (product, magazin_cpt) -> publication_form()
 2 single templates: single-{product, magazin_cpt}.php -> ww_shop_single_template
-1 archive template cpt: archive-product.php -> get_custom_post_typetemplate()_
+1 archive template cpt: archive-product.php -> get_custom_post_typetemplate()
+Activation Hooks and Registration:
+    add-action: add_action('init', CPTs and taxonomies, 0) 
+    Registration: register_post_type() and register_taxonomy()
+
