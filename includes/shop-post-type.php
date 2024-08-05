@@ -187,27 +187,18 @@ add_action( 'init', 'product_cpt', 0 );
  *
  * @param string $single Single template.
  */
+
 function ww_shop_single_template( $single ) {
+    global $post;
 
-	global $post;
-
-	/* Checks for single template by post type */
-	if ( 'product' === $post->post_type ) {
-		if ( file_exists( dirname( __FILE__ ) . '/single-product.php' ) ) {
-			return dirname( __FILE__ ) . '/single-product.php';
-		}
-	}
-  /* Checks for single template by post type */
-  if ( 'magazine_cpt' === $post->post_type ) {
-    if ( file_exists( dirname( __FILE__ ) . '/single-magazine_cpt.php' ) ) {
-      return dirname( __FILE__ ) . '/single-magazine_cpt.php';
+    if ( 'product' === $post->post_type || 'magazine_cpt' === $post->post_type ) {
+        if ( file_exists( plugin_dir_path( __FILE__ ) . 'single-cpt.php' ) ) {
+            return plugin_dir_path( __FILE__ ) . 'single-cpt.php';
+        }
     }
-  }
 
-	return $single;
-
+    return $single;
 }
-add_filter( 'single_template', 'ww_shop_single_template' );
 /**
  * Filter the archive for our cpt.
  *
