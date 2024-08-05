@@ -11,9 +11,9 @@ global $post;
 
 // Check the post type and include the appropriate template part
 if ( 'product' === $post->post_type ) {
-    get_template_part( 'template-parts/content', 'single-product' );
+    get_template_part( 'template-parts/', 'single-product' );
 } elseif ( 'magazine_cpt' === $post->post_type ) {
-    get_template_part( 'template-parts/content', 'single-magazine' );
+    get_template_part( 'template-parts/', 'single-magazine' );
 }
 
 get_footer();
