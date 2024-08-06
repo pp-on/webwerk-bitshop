@@ -402,13 +402,13 @@ function shop_styles_scripts() {
 
 	wp_enqueue_style(
 		'ww-shop',
-		plugin_dir_url( __DIR__ ) . 'webwerk-shop/css/shop.min.css',
+		plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/css/shop.min.css',
 		'',
 		WEBWERK_BITSHOP_VERSION
 	);
-	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/app.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
+	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/js/app.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
 	if ( basename( $template ) === 'single-warenkorb.php' || basename( $template ) === 'cart-checkout-page.php' ) {
-		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/cart.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
+		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/js/cart.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'shop_styles_scripts', 90 );
@@ -422,7 +422,7 @@ require_once plugin_dir_path( __FILE__ ) . 'assets/acf-definitions.php';
 /**
  * Register post type.
  */
-require_once dirname( __FILE__ ) . '/shop-post-type.php';
+require_once dirname( __FILE__ ) . '/includes/shop-post-type.php';
 
 
 
@@ -430,7 +430,7 @@ require_once dirname( __FILE__ ) . '/shop-post-type.php';
 /**
  * Register ajax cart-actions.
  */
-require_once dirname( __FILE__ ) . '/cart-actions.php';
+require_once dirname( __FILE__ ) . '/includes/cart-actions.php';
 
 
 // Search for Products.
