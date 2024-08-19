@@ -293,20 +293,6 @@ add_filter( 'query_vars', 'ww_shop_register_query_vars' );
 // Hook into cart_update ACFE-Form Action to update user_meta 'cart_item_count'.
 
 add_filter( 'acfe/form/submit/post/form=cart-form', 'update_cart_item_count', 10, 5 );
-/**
- * ACFE Kasse: Bestellung schicken loggen, Wagen löschen.
- *
- * @param array $form Form settings.
- */
-function checkout_actions( $form ) {
-	write_log( '########################## Bestellung abgeschickt ############################' );
-
-	$current_cart_id = $form['post_id'];
-		write_log( 'Warenkorb ' . $current_cart_id . ' löschen' );
-	do_action( 'clear_cart', $current_cart_id );
-}
-
-add_action( 'acfe/form/submit/form=cart-checkout', 'checkout_actions', 10, 1 );
 
 // Search-Template für Produktarchiv.
 
