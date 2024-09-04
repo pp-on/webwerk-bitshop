@@ -384,7 +384,7 @@ add_action(
  */
 function webwerk_bitshop_flush_rewrite_rules() {
     // Rewrite-Regeln leeren
-    flush_rewrite_rules()
+    flush_rewrite_rules();
 }
 
 // Aktivierungshook registrieren
