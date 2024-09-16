@@ -36,7 +36,7 @@ global $query;
 require_once plugin_dir_path( __FILE__ ) . 'includes/cart.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/checkout.php';
 // Include user-management.php conditionally if needed
-/ require_once plugin_dir_path( __FILE__ ) . 'includes/user-management.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/user-management.php';
 
 
 
