@@ -137,11 +137,13 @@ function ww_shop_prepare_cart( $user_login, object $user ) {
 				} else {
 					write_log( 'Fehler beim Erstellen des Warenkorbes: <br>' );
 					write_log( $createcart_success );
-					update_user_meta( $user->ID, 'shopping_cart_exists', 0 );
+                    update_user_meta( $user->ID, 'shopping_cart_exists', 0 );
+                
 				
 			}
 
-}
+            }
+} //Ende ww:shop_prepare_cart.
 
 
 /*
