@@ -52,6 +52,19 @@
  }
  add_action( 'init', 'publication_form', 0 );
 
+// Create the Parent Menu "Shop"
+function create_shop_parent_menu() {
+    add_menu_page(
+        __( 'Shop', 'webwerk-shop' ), // Page title
+        __( 'Shop', 'webwerk-shop' ), // Menu title
+        'manage_options',             // Capability
+        'shop',                       // Menu slug
+        '',                           // Callback function (if no content, leave it blank)
+        'dashicons-store',            // Icon (Dashicon for a store)
+        3                             // Menu position
+    );
+}
+add_action( 'admin_menu', 'create_shop_parent_menu' );
 
 
  /**
@@ -103,7 +116,7 @@
  		'public'                => true,
     'has_archive'           => true,
  		'show_ui'               => true,
- 		'show_in_menu'          => true,
+ 		'show_in_menu'          => 'shop', // Parent menu slug
  		'menu_position'         => 4,
   	'menu_icon'             => 'dashicons-money',
  		'show_in_admin_bar'     => true,
@@ -164,7 +177,7 @@
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
-		'show_in_menu'          => true,
+		'show_in_menu'          => 'shop', // Parent menu slug
 		'menu_position'         => 5,
 		'menu_icon'             => 'dashicons-book',
 		'show_in_admin_bar'     => true,
@@ -264,7 +277,7 @@ function customer_cart_post_type() {
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
-		'show_in_menu'          => true,
+		'show_in_menu'          => 'shop', // Parent menu slug
 		'menu_position'         => 5,
     'menu_icon'             => 'dashicons-cart',
 		'show_in_admin_bar'     => true,
@@ -324,7 +337,7 @@ function magazines() {
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
-		'show_in_menu'          => true,
+		'show_in_menu'          => 'shop', // Parent menu slug
 		'menu_position'         => 5,
 		'menu_icon'             => 'dashicons-media-document',
 		'show_in_admin_bar'     => true,

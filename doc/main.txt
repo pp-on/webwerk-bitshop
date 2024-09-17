@@ -1,6 +1,8 @@
 4 CPTs: 
     customer_order -> order_post_type()
     product -> product_cpt()
+    customer_cart -> customer_cart_post_type()
+    magazin_cpt -> magazines()
 1 taxonomy: product, magazin_cpt -> publication_form()
 2 single templates: single-{product, magazin_cpt}.php -> ww_shop_single_template
  * Text Domain: webwerk-shop
