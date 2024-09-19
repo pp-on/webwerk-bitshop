@@ -61,7 +61,7 @@ function create_shop_parent_menu() {
         'shop',                       // Menu slug
         '',                           // Callback function (if no content, leave it blank)
         'dashicons-store',            // Icon (Dashicon for a store)
-        3                             // Menu position
+        5                             // Menu position
     );
 }
 add_action( 'admin_menu', 'create_shop_parent_menu' );
