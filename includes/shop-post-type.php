@@ -61,7 +61,7 @@ function create_shop_parent_menu() {
         'shop',                       // Menu slug
         '',                           // Callback function (if no content, leave it blank)
         'dashicons-store',            // Icon (Dashicon for a store)
-        5                             // Menu position
+        4                             // Menu position
     );
 }
 add_action( 'admin_menu', 'create_shop_parent_menu' );
@@ -117,7 +117,7 @@ add_action( 'admin_menu', 'create_shop_parent_menu' );
     'has_archive'           => true,
  		'show_ui'               => true,
  		'show_in_menu'          => 'shop', // Parent menu slug
- 		'menu_position'         => 4,
+ 		'menu_position'         => 5,
   	'menu_icon'             => 'dashicons-money',
  		'show_in_admin_bar'     => true,
  		'show_in_nav_menus'     => true,
