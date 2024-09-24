@@ -260,10 +260,22 @@ add_action( 'wp_enqueue_scripts', 'shop_styles_scripts', 90 );
 require_once plugin_dir_path( __FILE__ ) . 'assets/acf-definitions.php';
 // require_once plugin_dir_path( __FILE__ ) . 'assets/acf-functions.php';.
 
-
+//Menu in Dashboard für CPTs.
+require_once plugin_dir_path( __FILE__ ) . 'includes/cpt/shop.php';
 /**
  * Register post type.
  */
+//Taxonomien.
+require_once dirname( __FILE__ ) . '/includes/cpt/taxonomies.php';
+//Bestellungen.
+require_once dirname( __FILE__ ) . '/includes/cpt/bestellung.php';
+//Produkte.
+require_once dirname( __FILE__ ) . '/includes/cpt/produkt.php';
+//Warenkörbe.
+require_once dirname( __FILE__ ) . '/includes/cpt/warenkorb.php';
+//Zeitschriften.
+require_once dirname( __FILE__ ) . '/includes/cpt/zeitschrift.php';
+//Templates
 require_once dirname( __FILE__ ) . '/includes/shop-post-type.php';
 
 
