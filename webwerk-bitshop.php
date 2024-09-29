@@ -274,7 +274,7 @@ require_once dirname( __FILE__ ) . 'post-types/produkt.php';
 //Warenkörbe.
 require_once dirname( __FILE__ ) . 'post-types/warenkorb.php';
 //Zeitschriften.
-require_once dirname( __FILE__ ) . 'post-types/zeitschrift.php';
+require_once dirname( __FILE__ ) . 'post-types/zeitschrifft.php';
 //Templates
 require_once dirname( __FILE__ ) . 'includes/shop-post-type.php';
 
