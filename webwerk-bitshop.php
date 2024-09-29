@@ -261,22 +261,22 @@ require_once plugin_dir_path( __FILE__ ) . 'assets/acf-definitions.php';
 // require_once plugin_dir_path( __FILE__ ) . 'assets/acf-functions.php';.
 
 //Menu in Dashboard für CPTs.
-require_once plugin_dir_path( __FILE__ ) . 'includes/cpt/shop.php';
+require_once plugin_dir_path( __FILE__ ) . 'post-types/shop.php';
 /**
  * Register post type.
  */
 //Taxonomien.
-require_once dirname( __FILE__ ) . '/includes/cpt/taxonomies.php';
+require_once dirname( __FILE__ ) . 'taxonomies/publication-form.php';
 //Bestellungen.
-require_once dirname( __FILE__ ) . '/includes/cpt/bestellung.php';
+require_once dirname( __FILE__ ) . 'post-types/bestellung.php';
 //Produkte.
-require_once dirname( __FILE__ ) . '/includes/cpt/produkt.php';
+require_once dirname( __FILE__ ) . 'post-types/produkt.php';
 //Warenkörbe.
-require_once dirname( __FILE__ ) . '/includes/cpt/warenkorb.php';
+require_once dirname( __FILE__ ) . 'post-types/warenkorb.php';
 //Zeitschriften.
-require_once dirname( __FILE__ ) . '/includes/cpt/zeitschrift.php';
+require_once dirname( __FILE__ ) . 'post-types/zeitschrift.php';
 //Templates
-require_once dirname( __FILE__ ) . '/includes/shop-post-type.php';
+require_once dirname( __FILE__ ) . 'includes/shop-post-type.php';
 
 
 
