@@ -266,17 +266,17 @@ require_once plugin_dir_path( __FILE__ ) . 'post-types/shop.php';
  * Register post type.
  */
 //Taxonomien.
-require_once dirname( __FILE__ ) . 'taxonomies/publication-form.php';
+require_once plugin_dir_path( __FILE__ ) . 'taxonomies/publication-form.php';
 //Bestellungen.
-require_once dirname( __FILE__ ) . 'post-types/bestellung.php';
+require_once plugin_dir_path( __FILE__ ) . 'post-types/bestellung.php';
 //Produkte.
-require_once dirname( __FILE__ ) . 'post-types/produkt.php';
+require_once plugin_dir_path( __FILE__ ) . 'post-types/produkt.php';
 //Warenkörbe.
-require_once dirname( __FILE__ ) . 'post-types/warenkorb.php';
+require_once plugin_dir_path( __FILE__ ) . 'post-types/warenkorb.php';
 //Zeitschriften.
-require_once dirname( __FILE__ ) . 'post-types/zeitschrifft.php';
+require_once plugin_dir_path( __FILE__ ) . 'post-types/zeitschrifft.php';
 //Templates
-require_once dirname( __FILE__ ) . 'includes/shop-post-type.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/shop-post-type.php';
 
 
 
@@ -284,7 +284,7 @@ require_once dirname( __FILE__ ) . 'includes/shop-post-type.php';
 /**
  * Register ajax cart-actions.
  */
-require_once dirname( __FILE__ ) . '/includes/cart-actions.php';
+require_once plugin_dir_path( __FILE__ ) . '/includes/cart-actions.php';
 
 
 // Search for Products.
@@ -323,7 +323,7 @@ function my_custom_search_template( $template ) {
 		return $template;
 	}
 
-	return dirname( __FILE__ ) . '/archive-product.php';
+	return plugin_dir_path( __FILE__ ) . 'templates/archive-product.php';
 
 }
 
