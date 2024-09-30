@@ -14,7 +14,7 @@ function shop_ajax_enqueue() {
 		'shop-ajax-script',
 		plugins_url( '/js/ajaxquery.js', __FILE__ ),
 		array( 'jquery' ),
-		WEBWERK_SHOP_VERSION,
+		WEBWERK_BITSHOP_VERSION,
 		false
 	);
 
@@ -33,7 +33,7 @@ function shop_ajax_enqueue() {
 		'ajax-update-cart-items',
 		plugins_url( '/js/update-cart-items.js', __FILE__ ),
 		array( 'jquery' ),
-		WEBWERK_SHOP_VERSION,
+		WEBWERK_BITSHOP_VERSION,
 		false
 	);
 
