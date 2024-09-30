@@ -284,7 +284,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/shop-post-type.php';
 /**
  * Register ajax cart-actions.
  */
-require_once plugin_dir_path( __FILE__ ) . '/includes/cart-actions.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/cart-actions.php';
 
 
 // Search for Products.
