@@ -276,7 +276,7 @@ require_once plugin_dir_path( __FILE__ ) . 'post-types/warenkorb.php';
 //Zeitschriften.
 require_once plugin_dir_path( __FILE__ ) . 'post-types/zeitschrifft.php';
 //Templates
-require_once plugin_dir_path( __FILE__ ) . 'includes/shop-post-type.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/templates_cpt.php';
 
 
 
