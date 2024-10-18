@@ -19,3 +19,11 @@ all CPTs Daten werden in der Datenbank gespeichert -> wp_posts:
     - post_status
     - post_type -> product, magazin_cpt, customer_order
       +-> es gibt an, welcher CPT es grad benutzt wird
+laden Templates CPTs (includes/templates_cpt.php):
+	is_single():
+		In der Funktion ww_shop_single_template() habe ich is_single() verwendet, um zu überprüfen, ob die aktuell angezeigte Seite eine Einzelansicht (Single View) eines Beitrags ist.
+		Anschließend prüft die Funktion, ob der Beitragstyp entweder product oder magazine_cpt ist. Wenn das der Fall ist, wird das benutzerdefinierte Template single-cpt.php geladen, wenn es vorhanden ist.
+
+	is_archive():
+			In der Funktion ww_shop_archive_template() habe ich is_archive() verwendet, um zu überprüfen, ob die aktuell angezeigte Seite eine Archivseite ist.
+		Wenn es sich um ein Archiv des Beitragstyps product handelt, wird das benutzerdefinierte Template archive-product.php verwendet, sofern es existiert.
