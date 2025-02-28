@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Webwerk Bitshop
- * Description: Ein Plugin zum Verwalten von Produkten, Bestellungen und Warenkörben.
- * Version: 1.0
+ * Plugin Name: Webwerk Shop.
+ * Description: Webwerk Shop.
  * Author: Webwerk
  * Author URI: https://webwerk-pfennigparade.de/
  *
- * @version WEBWERK_BITSHOP_VERSION
+ * @version WEBWERK_SHOP_VERSION
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: webwerk-shop
  * Domain Path: /
  *
  * @package Webwerk ACF Forms
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WEBWERK_BITSHOP_VERSION', '1.0' );
+define( 'WEBWERK_SHOP_VERSION', '1.0' );
 // Hook um Admintoolbar für alle Benutzer außer Admin zu verstecken.
 add_action( 'after_setup_theme', 'remove_admin_bar' );
 /**
@@ -33,12 +33,172 @@ function remove_admin_bar() {
 
 global $query;
 
-require_once plugin_dir_path( __FILE__ ) . 'includes/cart.php';
-require_once plugin_dir_path( __FILE__ ) . 'includes/checkout.php';
-// Include user-management.php conditionally if needed
-require_once plugin_dir_path( __FILE__ ) . 'includes/user-management.php';
+/**
+ * Alle Einkaufswagen löschen.
+ *
+ * @param array $user_carts   Zu löschende Wagenobjekte.
+ */
+function delete_all_carts( $user_carts ) {
+	foreach ( $user_carts as $user_cart ) {
+		write_log( 'destroy: ' );
+		write_log( $user_cart->ID );
+		wp_delete_post( $user_cart->ID );
+	}
+
+}
+
+/**
+ * Routine zum Löschen des Einkaufswagens.
+ *
+ * @param integer $current_cart_id ID des Einkaufswagens.
+ */
+function clear_cart_callback( $current_cart_id ) {
+	if ( have_rows( 'field_616558167898c', $current_cart_id ) ) :
+				$row = 1;
+		while ( have_rows( 'field_616558167898c', $current_cart_id ) ) :
+			the_row();
+			$row_delete_success = delete_row( 'field_616558167898c', 1, $current_cart_id );
+			$row_delete_success ? write_log( $row . ' gelöscht' ) : write_log( 'nichts gelöscht.' );
+			$row ++;
+				endwhile;
+		$cart_item_count   = 0; // Zähler auf 0 setzen.
+		$upd_success_count = update_user_meta( get_current_user_id(), 'cart_item_count', $cart_item_count );
+		write_log( 'user_meta update article count:  ' . $upd_success_count . ' (1=success) | Action: Warenkorb erfolgreich geleert' );
+		$cart_items_price  = 0; // Zähler auf 0 setzen.
+		$upd_success_price = update_user_meta( get_current_user_id(), 'cart_items_price', $cart_items_price );
+		write_log( 'user_meta update total price:  ' . $upd_success_price . ' (1=success) | Action: Gesamtpreis auf 0 gesetzt' );
+  endif;
+}
+add_action( 'clear_cart', 'clear_cart_callback' );
+
+// New Ajax logout.
+
+/**
+ * Modal für Artikel hinzufügen.
+ *
+ * @param object $RESTRequestObj AjaxRequest.
+ */
+function cart_modal( $RESTRequestObj ) {
+	$user = wp_get_current_user();
+	// $current_customer = $user->ID;
+	$item_in_cart = get_user_meta( $user->ID, 'cart_item_count', true );
+	// Modal wenn Artikel im Korb.
+	$cart_full_logout_popup_markup = '<div class="cart-full-logout-modal--webwerk" id="cart-modal--webwerk" role="dialog" aria-modal="true" aria-labelledby="cart-modal-head" aria-hidden="false">
+		<div class="cart-modal__settings">
+			<div class="cart-modal__title">
+				<h2 id="cart-modal-head">Wollen Sie den Warenkorb löschen?</h2>
+				<p>In Ihrem Warenkorb befinden sich noch Artikel.</p>
+				<p>Wenn Sie diese bis zur nächsten Anmeldung speichern möchten, drücken Sie bitte "Behalten".</p>
+			</div>
+			<div class="c-btns">
+					<a href="' . wp_logout_url() . '" class="btn btn-standard c-btn__keep-cart">Behalten</a>
+					<a href="' . wp_logout_url() . '" class="btn btn-standard c-btn__delete-cart">Löschen</a>
+			</div>
+			<div class="cart-modal__abort">
+			<p>Wenn Sie doch weiter einkaufen wollen, drücken Sie bitte "Abbrechen".</p>
+			<button id="cancel-logout" class="btn btn-standard c-btn__stay">Abbrechen</button>
+			</div>
+	</div>
+	<script>
+	jQuery(".c-btn__delete-cart").click(function(){
+
+	// This does the ajax request
+	$.ajax({
+			type: "POST",
+			url: wp_ajax_cart_obj.restURL + "bit-shop/v1/logout/delete-cart",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader( "X-WP-Nonce", wp_ajax_cart_obj.restNonce);
+			},
+			data: {
+					"action": "cart_logout",
+					"contentType": "application/json",
+					"dataType": "json",
+			},
+			success:function(data) {
+				console.log("Löschen");
+			},
+			error: function(errorThrown){
+					console.log(errorThrown);
+			}
+	});
+});
+
+	</script>
+	</div>';
+	// Modal wenn kein Artikel im Korb.
+	$cart_empty_logout_popup_markup = '<div class="cart-empty-logout-modal--webwerk" id="cart-modal--webwerk" role="dialog" aria-modal="true" aria-labelledby="cart-modal-head" aria-hidden="false">
+		<div class="cart-modal__settings">
+			<div class="cart-modal__title">
+				<h2 id="cart-modal-head">Wollen Sie sich wirklich abmelden?</h2>
+			</div>
+			<div class="c-btns">
+					<button id="cancel-logout" class="btn btn-standard c-btn__stay">Nein (Abbrechen)</button>
+					<a href="' . wp_logout_url() . '" class="btn btn-standard c-btn__logout">Ja</a>
+				</div>
+	</div>
+	</div>';
+
+	echo json_encode(
+		array(
+			'markup_full'     => $cart_full_logout_popup_markup,
+			'markup_empty'    => $cart_empty_logout_popup_markup,
+			'cart_item_count' => $item_in_cart,
+		)
+	);
+};
+
+// Logout hook: Ask customer if he wants to clear shopping-cart.
+
+/**
+ * Wagen löschen
+ */
+function delete_cart() {
+					// Falls Warenkorb vorhanden: löschen.
+					// Get current user.
+					$user             = wp_get_current_user();
+					$current_customer = $user->ID;
+					write_log( 'Benutzer mit ID ' . $current_customer . ' will ausloggen.' );
+					// Get cart of customer.
+					$args = array(
+						'post_type'   => 'customer_cart',
+						'post_status' => 'private',
+						'author'      => $current_customer,
+					);
+
+					// get his posts.
+					$current_user_carts      = get_posts( $args );
+					$carts_count_at_checkout = count( $current_user_carts );
+					write_log( 'Anzahl Warenkörbe beim Checkout: ' . $carts_count_at_checkout );
+					// sind Artikel im Warenkorb?
+					// $current_user_cart_id = $current_user_carts[0]->ID;
+					// Artikelanzahl checken.
+					  $item_in_cart       = get_user_meta( $user->ID, 'cart_item_count', true );
+						$cart_items_price = get_user_meta( $user->ID, 'cart_items_price', true );
+
+						delete_all_carts( $current_user_carts );
+
+					$success_reset_cart_count       = update_user_meta( $user->ID, 'shopping_cart_exists', 0 );
+					$success_reset_article_count    = update_user_meta( $user->ID, 'cart_item_count', 0 );
+					$success_reset_cart_items_price = update_user_meta( $user->ID, 'cart_items_price', 0 );
+					write_log( 'Warenkorbzähler zurückgesetzt: ' . $success_reset_cart_count . ' | Artikelzähler zurückgesetzt: ' . $success_reset_article_count . ' | Gesamtpreis zurückgesetzt: ' . $success_reset_cart_items_price );
+					write_log( 'Ausgeloggt (mit Löschen): ' . $user->user_nicename . '   [plugin.php Z: ' . __LINE__ . ']' );
+}
 
 
+/**
+ * Abmeldung loggen mit Redirect zum Shop.
+ *
+ * @param string $redirect_to URL Ziel.
+ * @param string $requested_redirect_to URL angefragter Redirect.
+ * @param object $user Benutzer.
+ */
+function log_logout( $redirect_to, $requested_redirect_to, object $user ) {
+				write_log( 'Ausgeloggt: ' . $user->user_nicename );
+				write_log( ' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ [plugin.php Z: ' . __LINE__ . ']' );
+				return home_url() . '/shop';
+}
+
+add_action( 'logout_redirect', 'log_logout', 10, 3 );
 
 /*
  * When User logs in, a shopping cart is prepared.
@@ -137,13 +297,11 @@ function ww_shop_prepare_cart( $user_login, object $user ) {
 				} else {
 					write_log( 'Fehler beim Erstellen des Warenkorbes: <br>' );
 					write_log( $createcart_success );
-                    update_user_meta( $user->ID, 'shopping_cart_exists', 0 );
-                
-				
+					update_user_meta( $user->ID, 'shopping_cart_exists', 0 );
+				}
 			}
 
-            }
-} //Ende ww:shop_prepare_cart.
+}
 
 
 /*
@@ -168,19 +326,19 @@ function ww_shop_templates( $template ) {
 		// include $template;
 	// }.
 
-	if ( is_page( 'Warenkorb/Checkout' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/cart-checkout-page.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) .  'templates/cart-checkout-page.php';
+	if ( is_page( 'Warenkorb/Checkout' ) && file_exists( plugin_dir_path( __FILE__ ) . 'cart-checkout-page.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) . 'cart-checkout-page.php';
 			// include $template;.
 	}
-	if ( is_page( 'Meine Bestellungen' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/orders-page.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) .  'templates/orders-page.php';
+	if ( is_page( 'Meine Bestellungen' ) && file_exists( plugin_dir_path( __FILE__ ) . 'orders-page.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) . 'orders-page.php';
 			// include $template;.
 	}
-	if ( is_singular( 'customer_cart' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/single-warenkorb.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) .  'templates/single-warenkorb.php';
+	if ( is_singular( 'customer_cart' ) && file_exists( plugin_dir_path( __FILE__ ) . 'single-warenkorb.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) . 'single-warenkorb.php';
 	}
-	if ( is_singular( 'customer_order' ) && file_exists( plugin_dir_path( __FILE__ ) .  'templates/single-bestellung.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) .  'templates/single-bestellung.php';
+	if ( is_singular( 'customer_order' ) && file_exists( plugin_dir_path( __FILE__ ) . 'single-bestellung.php' ) ) {
+		$template = plugin_dir_path( __FILE__ ) . 'single-bestellung.php';
 	}
 
 	return $template;
@@ -244,13 +402,13 @@ function shop_styles_scripts() {
 
 	wp_enqueue_style(
 		'ww-shop',
-		plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/css/shop.min.css',
+		plugin_dir_url( __DIR__ ) . 'webwerk-shop/css/shop.min.css',
 		'',
-		WEBWERK_BITSHOP_VERSION
+		WEBWERK_SHOP_VERSION
 	);
-	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/js/app.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
+	wp_enqueue_script( 'ww-shop-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/app.min.js', array( 'jquery' ), WEBWERK_SHOP_VERSION, true );
 	if ( basename( $template ) === 'single-warenkorb.php' || basename( $template ) === 'cart-checkout-page.php' ) {
-		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-bitshop/js/cart.min.js', array( 'jquery' ), WEBWERK_BITSHOP_VERSION, true );
+		wp_enqueue_script( 'ww-cart-js', plugin_dir_url( __DIR__ ) . 'webwerk-shop/js/cart.min.js', array( 'jquery' ), WEBWERK_SHOP_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'shop_styles_scripts', 90 );
@@ -260,23 +418,11 @@ add_action( 'wp_enqueue_scripts', 'shop_styles_scripts', 90 );
 require_once plugin_dir_path( __FILE__ ) . 'assets/acf-definitions.php';
 // require_once plugin_dir_path( __FILE__ ) . 'assets/acf-functions.php';.
 
-//Menu in Dashboard für CPTs.
-require_once plugin_dir_path( __FILE__ ) . 'post-types/shop.php';
+
 /**
  * Register post type.
  */
-//Taxonomien.
-require_once plugin_dir_path( __FILE__ ) . 'taxonomies/publication-form.php';
-//Bestellungen.
-require_once plugin_dir_path( __FILE__ ) . 'post-types/bestellung.php';
-//Produkte.
-require_once plugin_dir_path( __FILE__ ) . 'post-types/produkt.php';
-//Warenkörbe.
-require_once plugin_dir_path( __FILE__ ) . 'post-types/warenkorb.php';
-//Zeitschriften.
-require_once plugin_dir_path( __FILE__ ) . 'post-types/zeitschrifft.php';
-//Templates
-require_once plugin_dir_path( __FILE__ ) . 'includes/templates_cpt.php';
+require_once dirname( __FILE__ ) . '/shop-post-type.php';
 
 
 
@@ -284,7 +430,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/templates_cpt.php';
 /**
  * Register ajax cart-actions.
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/cart-actions.php';
+require_once dirname( __FILE__ ) . '/cart-actions.php';
 
 
 // Search for Products.
@@ -308,6 +454,55 @@ add_filter( 'query_vars', 'ww_shop_register_query_vars' );
 
 add_filter( 'acfe/form/submit/post/form=cart-form', 'update_cart_item_count', 10, 5 );
 
+/**
+ * Artikelanzahl
+ *
+ * @param integer $post_id Created/Updated post ID.
+ * @param string  $type     Action type: 'insert_post' or 'update_post'.
+ * @param array   $args     Generated post arguments.
+ * @param array   $form     Form settings.
+ * @param string  $action   Action name.
+ */
+function update_cart_item_count( $post_id, $type, $args, $form, $action ) {
+	// Hier werden die Artikel im Korb gezählt.
+	$current_customer    = $args['post_author'];
+	$current_cart        = $args['ID'];
+	$article_count       = 0;
+	$article_items_price = 0;
+	if ( have_rows( 'field_616558167898c', $current_cart ) ) :
+		 // Loop through rows.
+		while ( have_rows( 'field_616558167898c', $current_cart ) ) :
+			the_row();
+			 $article_count      += get_sub_field( 'cart_amount' );
+			$article_items_price += (int) get_sub_field( 'cart_amount' ) * (float) get_sub_field( 'cart_price' );
+		   endwhile;
+		update_user_meta( $current_customer, 'cart_item_count', $article_count );
+			write_log( 'Warenkorb-Update | User: ' . $current_customer . ' | Artikel-Count: ' . $article_count . '| [plugin.php Z 409]' );
+		update_user_meta( $current_customer, 'cart_items_price', $article_items_price );
+			write_log( 'Warenkorb-Update | User: ' . $current_customer . ' | Gesamtpreis: ' . $article_items_price . '| [plugin.php Z 413]' );
+	else :
+		update_user_meta( $current_customer, 'cart_item_count', $article_count );
+			write_log( 'Warenkorb-Update | User: ' . $current_customer . ' | Artikel-Count: ' . $article_count . '| [plugin.php Z 416]' );
+		update_user_meta( $current_customer, 'cart_items_price', 0 );
+			write_log( 'Warenkorb-Update | User: ' . $current_customer . ' | Gesamtpreis: 0 | [plugin.php Z 418]' );
+	endif;
+	// update_user_meta($current_customer, 'cart_item_count', $cart_item_count);.
+}
+/**
+ * ACFE Kasse: Bestellung schicken loggen, Wagen löschen.
+ *
+ * @param array $form Form settings.
+ */
+function checkout_actions( $form ) {
+	write_log( '########################## Bestellung abgeschickt ############################' );
+
+	$current_cart_id = $form['post_id'];
+		write_log( 'Warenkorb ' . $current_cart_id . ' löschen' );
+	do_action( 'clear_cart', $current_cart_id );
+}
+
+add_action( 'acfe/form/submit/form=cart-checkout', 'checkout_actions', 10, 1 );
+
 // Search-Template für Produktarchiv.
 
 add_filter( 'template_include', 'my_custom_search_template' );
@@ -323,7 +518,7 @@ function my_custom_search_template( $template ) {
 		return $template;
 	}
 
-	return plugin_dir_path( __FILE__ ) . 'templates/archive-product.php';
+	return dirname( __FILE__ ) . '/archive-product.php';
 
 }
 
@@ -418,3 +613,4 @@ function webwerk_bitshop_deactivate() {
 
 // Deaktivierungshook registrieren
 register_deactivation_hook(__FILE__, 'webwerk_bitshop_deactivate');
+?>

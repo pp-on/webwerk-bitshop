@@ -1,0 +1,338 @@
+* commit 7aaa0357f4037e61f64dd072b04db66686f16847 (HEAD -> main, origin/old-shop, origin/main, origin/HEAD, old-shop)
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Thu Dec 19 11:36:44 2024 +0100
+| 
+|     add db for cpts
+| 
+* commit 978fc95222bb159c12f4f154a4d6bca0150a1545
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Oct 18 11:44:24 2024 +0200
+| 
+|     chore: add doku for templates_cpt
+| 
+* commit 51ac36c6b2e6b8e89bdff374e1897525167384d5
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Oct 18 11:25:49 2024 +0200
+| 
+|     chore: update -> templates_cpt
+| 
+* commit 74dc2e4ec311c034f5543edabc302553477e041d
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Oct 18 11:18:57 2024 +0200
+| 
+|     chore: change name
+| 
+* commit be0f2777027b99316e6a2dd3500e44d1fbeb2534
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Oct 18 11:05:43 2024 +0200
+| 
+|     chore: fix and update the right path of archive_template
+| 
+* commit 702b24ed09c22d281d0e560f415c11be351915c4
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Oct 15 14:58:36 2024 +0200
+| 
+|     add https://github.com/php-stubs/wordpress-stubs f  or codecompletion with inteliphense
+| 
+* commit 66f02ac0ea5f33cfe95f5d1296ba5787cb8d54c7
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Oct 15 14:13:25 2024 +0200
+| 
+|     change menu position
+| 
+* commit 8857883602ada6c0cba9a9d02edb5598970e0ab5
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Oct 2 12:36:04 2024 +0200
+| 
+|     +chore: translate to german-cpt defiänitions
+| 
+* commit a540fc114228fda548d2eff3c4d67df690a09c5c
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 30 15:10:39 2024 +0200
+| 
+|     fix: replace old WEBWERK_SHOP_VERSION
+| 
+* commit 623ac8021d38c665a5bc62702a2ab66e037c9fe5
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 30 14:51:34 2024 +0200
+| 
+|     fix
+| 
+* commit 8517dfb228db00a379ffd9afde31949fe936a535
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 30 14:31:02 2024 +0200
+| 
+|     fix: replace dirname with plugin_dir_path.
+|     reason: the dirname outputs the l#ast name before the last /
+| 
+* commit d19027a627fec27f18e186908405e79324eb87cb
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 30 13:59:13 2024 +0200
+| 
+|     fix
+| 
+* commit 974ecce1b86d49bbb97f75ddfa8b7c1bd1a62c15
+| Author: Ossi <oswaldo.nickel@gmail.com>
+| Date:   Mon Sep 30 13:50:43 2024 +0200
+| 
+|     chore: create dir for post-types and taxonomies
+|   
+*   commit 3c4c6ee0d5befa8b2ccd2a3af8a395511412c8c0
+|\  Merge: fe92622 b7b7404
+| | Author: Ossi <oswaldo.nickel@gmail.com>
+| | Date:   Sun Sep 29 21:03:31 2024 +0200
+| | 
+| |     merge
+| | 
+| * commit b7b7404924d0aabe2b26ef6593585607d8806017
+| | Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| | Date:   Fri Sep 27 13:25:45 2024 +0200
+| | 
+| |     fix
+| | 
+* | commit fe926222aaa228a27607b8a6924bd3b8e2fe80e8
+| | Author: Ossi <oswaldo.nickel@gmail.com>
+| | Date:   Sun Sep 29 20:51:38 2024 +0200
+| | 
+| |     fix: correct wriong cPt name
+| | 
+* | commit c0edd31a3c571ffa0edb0311ab04cdc5fcc96dcd
+|/  Author: Ossi <oswaldo.nickel@gmail.com>
+|   Date:   Sun Sep 29 20:44:34 2024 +0200
+|   
+|       chore: better structure
+| 
+* commit 386b39b4dada5a46a2f84814321414d0a06f9002
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 24 15:40:39 2024 +0200
+| 
+|     chores: füge für jede CPT und Taxonomie ein php ein
+| 
+* commit bdc4c85139d60475bdbd60bf82e9720296baaeb6
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 24 15:31:14 2024 +0200
+| 
+|     chore: gibt bescheid, jede CPT und Taxonomien, auch Shop menu
+| 
+* commit 041188e1e8a8860776ec0f64aa0d5328490237f3
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 24 15:09:16 2024 +0200
+| 
+|     fix: correct slug to produkt
+| 
+* commit fabfb286bd30addd6577c3a7c8a1f4d3104e9ecc
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 24 13:21:13 2024 +0200
+| 
+|     chore: delete Taxonomy
+| 
+* commit be04ef21ee9567e952abbabfddec66f20da9e9b2
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 24 13:06:52 2024 +0200
+| 
+|     chore: delete all cpts
+| 
+* commit b616c19ca431a19dc112c5eeeca711e4592a1032
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Sep 20 13:07:08 2024 +0200
+| 
+|     fix
+| 
+* commit 5eef34dd362307aa35cd65e49e600a3aa6e84965
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Thu Sep 19 12:51:24 2024 +0200
+| 
+|     fix: change 'Shop' position
+| 
+* commit 40c79ae39f658118410f7b11e78ae49b51a1dc5e
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Sep 17 11:04:58 2024 +0200
+| 
+|     all gulp > out and sme typos corrected
+| 
+* commit ea829386c13576e41262c90e40cdae05b5453070
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 16 15:15:06 2024 +0200
+| 
+|     fix
+| 
+* commit 838321b9e3f120ab494f224c1c04b0f46a5b6137
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Sep 16 14:56:38 2024 +0200
+| 
+|     fix
+| 
+* commit f7cd631213aa05085a58d6ea3e9d1c7316eae99f
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Sep 4 12:05:10 2024 +0200
+| 
+|     fix
+| 
+* commit 822f486d66bfdfc4420db841d3679922285556bf
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Sep 4 12:00:24 2024 +0200
+| 
+|     fix:                 Umlaute
+| 
+* commit b49faf0c8554f27aed49ef6c889749de6b1347ad
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Thu Aug 29 11:40:20 2024 +0200
+| 
+|     chore: add where are saved CPTs
+| 
+* commit aaebf3f43f8e5cfbb559b7bfb87016a2a8747489
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 26 13:48:54 2024 +0200
+| 
+|     no swp
+| 
+* commit eb0fbe74a0b1f7bcc8546afbc2454801a0e31e44
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 19 15:44:22 2024 +0200
+| 
+|     fix
+| 
+* commit cfcea6f3f00dce356189fac9f7db7569da8bb96f
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 19 15:21:50 2024 +0200
+| 
+|     chore: move checkout_actions
+| 
+* commit 7cd9dc1cbe266eea3b05c8b8ee66b889406f7edd (origin/oop, oop)
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 9 13:29:11 2024 +0200
+| 
+|     move form main file
+| 
+* commit c2116b733ea3660ae5d9535e8795971cbb4f27ae
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 9 13:25:58 2024 +0200
+| 
+|     move from main file
+| 
+* commit f4596a0b3a44d23eeb54e50cabe92c989991cb1a
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 9 13:21:28 2024 +0200
+| 
+|     move logout
+| 
+* commit fbbee4681f61cea184e9dbc70217b8f0452b2564
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 9 11:19:00 2024 +0200
+| 
+|     chore: break code in crt, checkout and user-management.php
+| 
+* commit 024ddb4573fa7fad1f31d87c2ffb3ae2d3e370bd
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 9 11:14:48 2024 +0200
+| 
+|     chore: move all cart functions
+| 
+* commit 5d9ee3e71babeaddc11b41ce42bb947fb2ba4f5b
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Aug 6 14:27:02 2024 +0200
+| 
+|     fix: minors
+| 
+* commit 206b67efc5f7a15e65d53071b269655e9927f370
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 5 16:06:40 2024 +0200
+| 
+|     fix files name
+| 
+* commit 5cfaecf8d84475bf1f22f8d3ee394cf975c1c2f2
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 5 15:59:43 2024 +0200
+| 
+|     fix
+| 
+* commit c3a64b684a8c0e3585df52cea639c346dac6e467
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 5 15:53:47 2024 +0200
+| 
+|     feat: use single-cpt to filter template
+| 
+* commit d89bc7678a00a26f90cb354a3bde219175766faa
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 5 15:40:45 2024 +0200
+| 
+|     feat: add php to include template  according to cpt
+| 
+* commit 1856129fb56d0f5e24138046caa88e00fdbf1bb1
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Aug 5 15:22:20 2024 +0200
+| 
+|     chore: moved ols scss
+| 
+* commit f884a7599d2c642bd18bca2d0c975cef28f66407
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Aug 2 13:37:05 2024 +0200
+| 
+|     add gitig
+| 
+* commit b3aea96ed392446d42a5dcd214584db60788fa49
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Jul 31 13:53:53 2024 +0200
+| 
+|     fix
+| 
+* commit 4234e68f495be46edbc18176c97545737a5226a5
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Jul 31 13:49:56 2024 +0200
+| 
+|     chores: update Intro
+| 
+* commit abfbb05ce4dd2616767f002b29b0add1894cb704
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Jul 30 14:03:02 2024 +0200
+| 
+|     featL make sure flush_rewrite_rules are there hfor
+|     CPTs
+| 
+* commit 5aff06ff90ceabac7426841b22dbeb1a195e5c6d
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Tue Jul 23 12:00:29 2024 +0200
+| 
+|     update version
+| 
+* commit 5da6ec032bbbb3d885d6bc215e3445f36ee2e816
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Wed Jul 10 16:03:06 2024 +0200
+| 
+|     chore:add docs
+| 
+* commit e4cd4bab0556a6df910fc4197b7bedb70ba377c5
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Jul 8 16:01:56 2024 +0200
+| 
+|     mvtemplates php
+| 
+* commit 49064fdf5c6cdfd0c546d7d85c2a10c9a0a41fd6
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Jul 8 15:59:59 2024 +0200
+| 
+|     chore: change main file's name
+| 
+* commit f1e6a1855ce689c3df19c79115655532f06ffad2
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Jul 8 15:53:11 2024 +0200
+| 
+|     chores: update plugin.php header
+| 
+* commit e5ea1ebe8c347d3250efb3a62013ba2dc9258ccd
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Mon Jul 8 15:38:10 2024 +0200
+| 
+|     chores: create tmplates/
+| 
+* commit fb144b443bdf754f0e8cfa7403d7dfcc01cbfb5c
+| Author: Nickel Oswaldo <oswaldo.nickel@pfennigparade.de>
+| Date:   Fri Jun 7 12:25:23 2024 +0200
+| 
+|     start
+| 
+* commit 0c0947664d9a74571ecef8e0c5380daa6b56088d
+  Author: Oswaldo Nickel <57627866+pp-on@users.noreply.github.com>
+  Date:   Fri Jun 7 12:15:16 2024 +0200
+  
+      Initial commit
