@@ -1,0 +1,20 @@
+<?php
+/*
+Plugin Name: eShop for Blind Users
+Description: A plugin to sell books and magazines in audio MP3 format for blind users.
+Version: 1.0
+Author: Your Name
+*/
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+// Autoload classes
+spl_autoload_register(function ($class_name) {
+    include_once plugin_dir_path(__FILE__) . 'classes/' . $class_name . '.php';
+});
+
+// Initialize the plugin
+require_once plugin_dir_path(__FILE__) . 'includes/class-plugin-init.php';
+new PluginInit();
