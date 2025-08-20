@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Webwerk Shop.
+ * Plugin Name: webwerk-bitshop
  * Description: Webwerk Shop.
  * Author: Webwerk
  * Author URI: https://webwerk-pfennigparade.de/
@@ -11,7 +11,7 @@
  * Text Domain: webwerk-shop
  * Domain Path: /
  *
- * @package Webwerk ACF Forms
+ * @package webwerk-bitshop
  */
 
 // Exit if accessed directly.
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WEBWERK_SHOP_VERSION', '1.0' );
+define( 'WEBWERK_SHOP_VERSION', '2.0' );
 // Hook um Admintoolbar für alle Benutzer außer Admin zu verstecken.
 add_action( 'after_setup_theme', 'remove_admin_bar' );
 /**

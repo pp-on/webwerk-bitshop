@@ -2,7 +2,7 @@
 /**
  * ACF Funktionen.
  *
- * @package Webwerk Shop
+ * @package webwerk-bitshop
  */
 
 /**

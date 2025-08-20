@@ -2,7 +2,7 @@
 /**
  * Produkte
  *
- * @package Webwerk Shop
+ * @package webwerk-bitshop
  */
 
  get_header();

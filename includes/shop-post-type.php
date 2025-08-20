@@ -2,7 +2,7 @@
 /**
  * Post Type functions.
  *
- * @package Webwerk Shop
+ * @package webwerk-bitshop
  **/
 
  /**
